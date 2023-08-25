@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index/index.css">
+  <link rel="stylesheet" href="./shared/shared.css">
+  <title>DeWeb Tech | Home</title>
+</head>
+
+<body>
+  <header class="header">
+    <!-- *** Create Header *** -->
+    <script type='module'>
+      // Import the createHeader function from shared.js
+      import { createHeader } from './shared/shared.js';
+
+      // Import the createSharedButton function
+      import { createSharedButton } from './shared/shared.js';
+
+      // Call the createHeader function to generate the header
+      const header = createHeader();
+
+      // Customise the header content for this page
+      const h1 = header.querySelector('.header__hero-info h1');
+      h1.textContent = 'We develop and design websites that will ensure your success';
+
+      const p = header.querySelector('.header__hero-info p');
+      p.innerHTML = `DeWeb Tech provides companies with creative website solutions for their businesses by creating user-oriented WordPress websites`;
+
+      const img = header.querySelector('.header__hero-img img');
+      img.src = './index/imgs/hero.png';
+
+      // Create a button using the function
+      const button = createSharedButton("Let's Talk", './contact.html');
+
+      // Get the .header__hero-info element and append the button to it
+      const heroInfo = header.querySelector('.header__hero-info');
+      heroInfo.appendChild(button);
+    </script>
+  </header>
+
+
+  <main>
+    <!-- Create index about us section -->
+    <section class="index__about-us">
+      <script type="module">
+        // Import the createInfoBox function from shared.js
+        import { createInfoBox } from './shared/shared.js';
+
+        const aboutUsContainer = document.querySelector('.index__about-us');
+
+        // Add the info-box content
+        const infoBox = createInfoBox('About us',
+          'We prioritise quality and unique design.',
+          'DeWeb Tech provides companies with creative website solutions for their businesses by creating user-oriented WordPress websites',
+          'Learn more');
+        
+        // Append the info-box to the aboutUsContainer
+        aboutUsContainer.appendChild(infoBox);
+
+        // Create and add the image element
+        const img = document.createElement('img');
+        img.classList.add('index__about-us__img');
+        img.src = './index/imgs/about-us.jpg';
+        img.alt = 'photo';
+
+        // Append the image to the aboutUsContainer
+        aboutUsContainer.appendChild(img);
+      </script>
+    </section>
+
+    <!-- Create index services section -->
+    <section class="index__services">
+      <script type="module">
+        // Import the createServices function from shared.js
+        import { createInfoBox } from './shared/shared.js';
+
+        // Import the appendAccordionToContainer function from index.js
+        import { appendAccordionToContainer } from './index/index.js';
+
+        const servicesContainer = document.querySelector('.index__services');
+
+        // Add the info-box content
+        const servicesInfoBox = createInfoBox('Services',
+          'What can we offer you?',
+          'Our team is an expert in developing a meaningful branding identity for your business, creating custom web design and developing it in WordPress',
+          'Learn more');
+        
+        // Append the info-box to the servicesContainer
+        servicesContainer.appendChild(servicesInfoBox);
+
+        // Append the accordion to the servicesContainer
+        appendAccordionToContainer(servicesContainer);
+      </script>
+    </section>
+
+    <!-- Create index projects section -->
+    <section class="index__projects">
+      <script type="module">
+        // Import the createProjects function from shared.js
+        import { createInfoBox } from './shared/shared.js';
+
+        // Import the createProjects function from shared.js
+        import { createPortfolios } from './index/index.js';
+
+        // Import the createSharedButton function
+        import { createSharedButton } from './shared/shared.js';
+
+        const projectsContainer = document.querySelector('.index__projects');
+        
+        // Add the info-box content
+        const projectsInfoBox = createInfoBox('Projects',
+          'Discover our selected works',
+          'We have compiled this portfolio where you can explore a collection of our successful past projects',
+          'Discover more');
+
+        // Create a button using the function
+        const allProjectsBtn = createSharedButton("View All Projects", './portfolio.html');
+
+        // Append the info-box to the projectsContainer
+        projectsContainer.appendChild(projectsInfoBox);
+
+        // Call the createProjects function and pass the projectsContainer as an argument
+        createPortfolios(projectsContainer);
+
+        const projectsBox = document.querySelector('.projects-box');
+
+        // Append the button to the projectsContainer
+        projectsBox.appendChild(allProjectsBtn);
+      </script>
+    </section>
+  </main>
+
+  <footer class="footer">
+
+  </footer>
+
+  <script type="module" src="./shared/shared.js"></script>
+  <script type='module' src="./index/index.js"></script>
+
+</body>
+
+</html>
