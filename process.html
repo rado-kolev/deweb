@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./shared/shared.css">
+  <link rel="stylesheet" href="./process/process.css">
+  <script src="https://kit.fontawesome.com/395b4471a7.js" crossorigin="anonymous"></script>
+  <title>DeWeb Tech | Process</title>
+</head>
+
+<body>
+  <header class="header">
+    <!-- *** Create Header *** -->
+    <script type='module'>
+      // Import the createHeader function from shared.js
+      import { createHeader } from './shared/shared.js';
+
+      // Call the createHeader function to generate the header
+      const header = createHeader();
+
+      // Customise the header content for this page
+      const h1 = header.querySelector('.header__hero-info h1');
+      h1.textContent = 'What to expect when working with us?';
+
+      const p = header.querySelector('.header__hero-info p');
+      p.innerHTML = `Our work process is based on collaboration and transparency. We have divided our process in three stages. With this approach we ensure that our clients will have all needed tools to maintain their website and digital presence.`;
+
+      const img = header.querySelector('.header__hero-img img');
+      img.src = './process/imgs/hero.png';
+    </script>
+  </header>
+
+  <main>
+    <div class="process__phases-container">
+      <section class="process__phase">
+      </section>
+    </div>
+    
+    <div class="process__details">
+      <section class="process__details-discovery">
+        <script type='module'>
+          // Import the createInfoBox function from shared.js
+          import { createInfoBox, createCustomElement } from './shared/shared.js';
+
+          const discoveryContainer = document.querySelector('.process__details-discovery');
+
+          // Create a container div for the img and .info-box__content
+          const discoveryContentContainer = document.createElement('div');
+          discoveryContentContainer.classList.add('process__discovery-content-container');
+
+          // Add the info-box content
+          const discoveryInfoBox = createInfoBox(
+            'Discovery',
+            'Steps taken during Discovery phase.',
+            'Every projects starts with a discovery phase, where a clear vision of the projects is formed by analysing goals, timeline, budget and more.',
+            ''
+          );
+
+          // Get the .info-box__content div from discoveryInfoBox
+          const discoveryInfoBoxContent = discoveryInfoBox.querySelector('.info-box__content');
+
+          // Create discoveryImg element
+          const discoveryImg = document.createElement('img');
+          discoveryImg.src = './process/imgs/discover.png';
+          discoveryImg.alt = 'Discovery Phase Image';
+
+          // Append the .info-box__content to the discoveryContentContainer
+          discoveryContentContainer.appendChild(discoveryInfoBoxContent);
+
+          // Append the discoveryImg to the discoveryContentContainer
+          discoveryContentContainer.appendChild(discoveryImg);
+
+          // Append the discoveryContentContainer to the discoveryInfoBox
+          discoveryInfoBox.appendChild(discoveryContentContainer);
+
+          // Append the info-box to the discoveryContainer
+          discoveryContainer.appendChild(discoveryInfoBox);
+
+
+          // *** Create the container for custom elements ***
+          const discoveryStepsContainer = document.createElement('div');
+          discoveryStepsContainer.classList.add('process__details-discovery-steps');
+
+          // Append the container to the discoveryContainer
+          discoveryContainer.appendChild(discoveryStepsContainer);
+
+          // Add the custom elements
+          const initConsultation = createCustomElement(
+            '01',
+            'Initial Consultation',
+            'This initial call will be dedicated to understanding your goals, vision, timeline and the scope of the project.',
+            ['Meet each other', 'Write a proposal', 'Concept sitemap']
+          );
+          discoveryStepsContainer.appendChild(initConsultation);
+
+          const digitalStrategy = createCustomElement(
+            '02',
+            'Digital Strategy',
+            'On a second call we will discuss the proposal and estimate how it fits with your vision and brand. We will develop a strategy to successfully digitalise your brand.',
+            ['User/market research', 'Information strategy']
+          );
+          discoveryStepsContainer.appendChild(digitalStrategy);
+        </script>
+      </section>
+      
+      <section class="process__details-design">
+        <script type='module'>
+          // Import the createInfoBox function from shared.js
+          import { createInfoBox, createCustomElement } from './shared/shared.js';
+
+          const designContainer = document.querySelector('.process__details-design');
+
+          // Create a container div for the img and .info-box__content
+          const designContentContainer = document.createElement('div');
+          designContentContainer.classList.add('process__design-content-container');
+
+          // Add the info-box content
+          const designInfoBox = createInfoBox(
+            'Design',
+            'Steps taken during Design phase.',
+            'At this phase we work on the user interface and user experience, to ensure that the website is intuitive and easy-to-use.',
+            ''
+          );
+
+          // Get the .info-box__content div from designInfoBox
+          const designInfoBoxContent = designInfoBox.querySelector('.info-box__content');
+
+
+          // Create designImg element
+          const designImg = document.createElement('img');
+          designImg.src = './process/imgs/design.png';
+          designImg.alt = 'Design Phase Image';
+
+          // Append the .info-box__content to the designContentContainer
+          designContentContainer.appendChild(designInfoBoxContent);
+
+          // Append the designImg to the designContentContainer
+          designContentContainer.appendChild(designImg);
+
+          // Append the designContentContainer to the designInfoBox
+          designInfoBox.appendChild(designContentContainer);
+
+          // Append the info-box to the discoveryContainer
+          designContainer.appendChild(designInfoBox);
+
+
+          // *** Create the container for custom elements ***
+          const designStepsContainer = document.createElement('div');
+          designStepsContainer.classList.add('process__details-design-steps');
+
+          // Append the container to the discoveryContainer
+          designContainer.appendChild(designStepsContainer);
+
+          // Add the custom elements
+          const userExperience = createCustomElement(
+            '03',
+            'User Experience',
+            'At this step we will analyse the user journey through the website and focus on developing the website skeleton structure using wireframes.',
+            ['User journey', 'Wireframing']
+          );
+          designStepsContainer.appendChild(userExperience);
+
+          const userInterface = createCustomElement(
+            '04',
+            'User Interface',
+            'At this step the website design will be created, while repeatedly consulting with you on the design. Once agreed upon the design will be made resonsive.',
+            ['Final website design', 'Style guide', 'Responsive design']
+          );
+          designStepsContainer.appendChild(userInterface);
+        </script>
+      </section>
+
+      <section class="process__details-development">
+        <script type='module'>
+          // Import the createInfoBox function from shared.js
+          import { createInfoBox, createCustomElement } from './shared/shared.js';
+
+          const developmentContainer = document.querySelector('.process__details-development');
+
+          // Create a container div for the img and .info-box__content
+          const developmentContentContainer = document.createElement('div');
+          developmentContentContainer.classList.add('process__development-content-container');
+
+          // Add the info-box content
+          const developmentInfoBox = createInfoBox(
+            'Development',
+            'Steps taken during Development phase.',
+            'At this phase the project is being developed in WordPress. Once finish it is tested to ensure everything functions as intended.',
+            ''
+          );
+
+          // Get the .info-box__content div from developmentInfoBox
+          const developmentInfoBoxContent = developmentInfoBox.querySelector('.info-box__content');
+
+          // Create developmentImg element
+          const developmentImg = document.createElement('img');
+          developmentImg.src = './process/imgs/development.png';
+          developmentImg.alt = 'Development Phase Image';
+
+          // Append the .info-box__content to the developmentContentContainer
+          developmentContentContainer.appendChild(developmentInfoBoxContent);
+
+          // Append the developmentImg to the developmentContentContainer
+          developmentContentContainer.appendChild(developmentImg);
+
+          // Append the developmentContentContainer to the developmentInfoBox
+          developmentInfoBox.appendChild(developmentContentContainer);
+
+          // Append the info-box to the developmentContainer
+          developmentContainer.appendChild(developmentInfoBox);
+
+
+          // *** Create the container for custom elements ***
+          const developmentStepsContainer = document.createElement('div');
+          developmentStepsContainer.classList.add('process__details-development-steps');
+
+          // Append the container to the developmentContainer
+          developmentContainer.appendChild(developmentStepsContainer);
+
+          // Add the custom elements
+          const userExperienwordPressDev = createCustomElement(
+            '05',
+            'WordPress Development',
+            'Here, the design is being translated into Wordpress and all functions and elements are being developed.',
+            ['Custom WordPress website', 'SEO Optimisation (if requested)']
+          );
+          developmentStepsContainer.appendChild(userExperienwordPressDev);
+
+          const projectHandIn = createCustomElement(
+            '06',
+            'Project Hand-in',
+            'Finally, the project will be handed-in to you, including instruction sheets on how you can maintain you own content.',
+            ['Instruction sheets', 'Personalised video instructions']
+          );
+          developmentStepsContainer.appendChild(projectHandIn);
+        </script>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <script type="module">
+      import { createFooter } from './shared/shared.js';
+      const footerElement = document.querySelector('.footer');
+      footerElement.appendChild(createFooter());
+    </script>
+  </footer>
+
+  <script type="module" src="./shared/shared.js"></script>
+  <script type='module' src="./process/process.js"></script>
+
+</body>
+
+</html>

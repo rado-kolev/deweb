@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./shared/shared.css">
+  <link rel="stylesheet" href="./about/about.css">
+  <script src="https://kit.fontawesome.com/395b4471a7.js" crossorigin="anonymous"></script>
+  <title>DeWeb Tech | Process</title>
+</head>
+
+<body>
+  <header class="header">
+    <!-- *** Create Header *** -->
+    <script type='module'>
+      // Import the createHeader function from shared.js
+      import { createHeader } from './shared/shared.js';
+
+      // Call the createHeader function to generate the header
+      const header = createHeader();
+
+      // Customise the header content for this page
+      const h1 = header.querySelector('.header__hero-info h1');
+      h1.textContent = 'We offer solutions to your digital needs by prioritising quality and unique design.';
+
+      const p = header.querySelector('.header__hero-info p');
+      p.innerHTML = `Want to meet the team of DeWeb Tech?`;
+    </script>
+  </header>
+  <main>
+    <div class="about__under-header-img">
+      <img src="./index/imgs/about-us.jpg" alt="">
+    </div>
+
+    <section class="about-us__story">
+      <script type="module">
+        // Import the createInfoBox function from shared.js
+        import { createInfoBox } from './shared/shared.js';
+
+        // Import the createSharedButton function
+        import { createSharedButton } from './shared/shared.js';
+
+        const aboutUsStoryContainer = document.querySelector('.about-us__story');
+
+        // Add the info-box content
+        const storyInfoBox = createInfoBox('Story',
+          'A creative team focused on creating the right website for your business and help establish a strong digital presence.',
+          'Our team consists of young professionals, passionate to help B2B companies by creating visually structured and creative websites that rank high on Google using our SEO optimisation strategies. We support our clients through the whole process and offer detailed on-boarding once their website launches.',
+          '');
+        
+
+        // Create a button using the function
+        const button = createSharedButton("Let's Talk", './contact.html');
+
+        // Append the button to the storyInfoBox
+        storyInfoBox.appendChild(button);
+
+        // Append the info-box to the aboutUsStoryContainer
+        aboutUsStoryContainer.appendChild(storyInfoBox);
+      </script>
+    </section>
+
+    <section class="about-us__values">
+      <script type="module">
+        // Import the createInfoBox function from shared.js
+        import { createInfoBox, createCustomElement } from './shared/shared.js';
+
+        const aboutUsValuesContainer = document.querySelector('.about-us__values');
+
+        // Add the info-box content
+        const valuesInfoBox = createInfoBox('Values',
+          'Here are the values that we stick to while working together.',
+          '',
+          '');
+        
+        // Append the info-box to the aboutUsvaluesContainer
+        aboutUsValuesContainer.appendChild(valuesInfoBox);
+
+
+        // *** Create the container for custom elements ***
+        const valuesContainer = document.createElement('div');
+        valuesContainer.classList.add('about-us__values-container');
+
+        // Append the container to the aboutUsValuesContainer
+        aboutUsValuesContainer.appendChild(valuesContainer);
+
+        // Add the custom elements
+        const transparency = createCustomElement(
+          '01',
+          'Transparency',
+          'We always communicate openly and take accountability for every step of the process. Our clients are always informed about progress, ups and downs of the project. ',
+          []
+        );
+        valuesContainer.appendChild(transparency);
+
+        const passion = createCustomElement(
+          '02',
+          'Passion',
+          'We are connected through our shared passion for creativity and trends. We are captivated by the uniqueness of each projects, thus we love to give it our all.',
+          []
+        );
+        valuesContainer.appendChild(passion);
+
+        const learning = createCustomElement(
+          '03',
+          'Learning',
+          'We embrace each project because we take every opportunity to learn and improve our abilities in design, development and SEO.',
+          []
+        );
+        valuesContainer.appendChild(learning);
+
+        const communication = createCustomElement(
+          '04',
+          'Communication',
+          'We value communication with our clients and appreciate when we receive critical feedback. We love being challenged to produce better work.',
+          []
+        );
+        valuesContainer.appendChild(communication);
+      </script>
+    </section>
+
+    <section class="about-us__team">
+      <script type="module">
+        // Import the createInfoBox function from shared.js
+        import { createInfoBox } from './shared/shared.js';
+
+        // Import the createContentBoxes function from about.js
+        import { createContentBoxes } from './about/about.js';
+
+
+        const teamContainer = document.querySelector('.about-us__team');
+
+        // Add the info-box content
+        const teamInfoBox = createInfoBox('Meet The Team',
+          'Meet the talented people at DeWeb',
+          '',
+          '');
+
+        // Append the info-box to the aboutUsStoryContainer
+        teamContainer.appendChild(teamInfoBox);
+
+        // Append the content boxes container to the teamContainer
+        teamContainer.appendChild(createContentBoxes());
+      </script>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <script type="module">
+      import { createFooter } from './shared/shared.js';
+      const footerElement = document.querySelector('.footer');
+      footerElement.appendChild(createFooter());
+    </script>
+  </footer>
+
+  <script type="module" src="./shared/shared.js"></script>
+  <script type='module' src="./about/about.js"></script>
+
+</body>
+
+</html>

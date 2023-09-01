@@ -1,0 +1,335 @@
+@import url('../shared/shared.css');
+
+.header__hero-info {
+  top: 20%;
+}
+
+.header__hero-img img {
+  max-width: 46.125rem;
+  margin: 2.25rem auto 7.5rem auto;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.process__phases-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.process__phase {
+  width: 100%;
+  max-width: 81.25rem;
+  height: 28rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -6.25rem;
+}
+
+.process__phase:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.process__phase-discovery,
+.process__phase-design,
+.process__phase-development {
+  display: flex;
+  flex-direction: column;
+  max-width: 23.75rem;
+  max-height: 25rem;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-gray);
+  background: var(--clr-off-white);
+}
+
+.process__phase-discovery {
+  align-self: flex-start;
+}
+
+.process__phase-design {
+  align-self: center;
+}
+
+.process__phase-development {
+  align-self: flex-end;
+}
+
+.phase__imgNumHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.phase__imgNumHeader img {
+  width: 6.25rem;
+}
+
+.phase__imgNumHeader h4 {
+  font-size: 1.875rem;
+  color: var(--clr-gray);
+}
+
+.phase__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.phase__body h4 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.phase__body {
+  text-align: justify;
+}
+
+.process__details {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.process__details-discovery,
+.process__details-design,
+.process__details-development {
+  width: 100%;
+  max-width: 81.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.process__details-discovery,
+.process__details-design {
+  padding-bottom: 5rem;
+}
+
+.process__discovery-content-container,
+.process__design-content-container,
+.process__development-content-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.process__discovery-content-container img,
+.process__design-content-container img,
+.process__development-content-container img {
+  max-width: 15.5rem;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.info-box__content {
+  flex-direction: column;
+}
+
+.info-box__content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.process__details-discovery-steps,
+.process__details-design-steps,
+.process__details-development-steps {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4rem;
+}
+
+.custom-element {
+  width: 100%;
+  max-width: 32.75rem;
+  padding-left: 3.6rem;
+  padding-top: 3.75rem;
+  background-image: url('../index/imgs/gradient.png');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 9.5rem 9.5rem;
+}
+
+
+.element-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.element-header-h4-number {
+  color: var(--clr-off-white);
+  margin-right: 2.5rem;
+}
+
+.custom-element p {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.custom-element ul {
+  list-style-type: square;
+  padding-left: 1.15rem;
+  line-height: 2.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .phase__imgNumHeader img {
+    width: 4.5rem;
+  }
+
+  .phase__body h4 {
+    font-size: 1.5rem;
+  }
+
+  .process__discovery-content-container img,
+  .process__design-content-container img,
+  .process__development-content-container img {
+    max-width: 12.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header__hero-img img {
+    max-width: 40rem;
+  }
+
+  .process__phase {
+    height: 22.5rem;
+  }
+
+  .process__phase-discovery,
+  .process__phase-design,
+  .process__phase-development {
+    max-height: 20rem;
+    padding: 1.5rem;
+  }
+
+  .process__discovery-content-container img,
+  .process__design-content-container img,
+  .process__development-content-container img {
+    max-width: 10.5rem;
+  }
+
+  .element-header-h4-number {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .process__discovery-content-container img,
+  .process__design-content-container img,
+  .process__development-content-container img {
+    max-width: 9.5rem;
+  }
+
+  .custom-element {
+    background-size: 9rem 9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__hero-info {
+    max-width: 30rem;
+  }
+  .header__hero-img img {
+    max-width: 30rem;
+  }
+
+  .process__phase {
+    height: 38rem;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-top: -4.05rem;
+  }
+
+  .process__phase-discovery,
+  .process__phase-design,
+  .process__phase-development {
+    max-height: 13rem;
+  }
+
+  .phase__imgNumHeader {
+    margin-bottom: 0.5rem;
+  }
+
+  .phase__imgNumHeader img {
+    width: 3rem;
+  }
+
+  .phase__body h4 {
+    font-size: 1.25rem;
+  }
+
+  .process__details {
+    padding: 4rem 1.5rem;
+  }
+
+  .process__discovery-content-container img,
+  .process__design-content-container img,
+  .process__development-content-container img {
+    max-width: 7rem;
+  }
+
+  .process__details-discovery,
+  .process__details-design {
+    padding-bottom: 3rem;
+}
+
+  .process__details-discovery-steps,
+  .process__details-design-steps,
+  .process__details-development-steps {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header__hero {
+    height: 35rem;
+  }
+  .header__hero-img img {
+    display: none;
+  }
+
+  .process__phase:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .info-box__content {
+    margin-right: 0.5rem;
+  }
+
+  .process__discovery-content-container img,
+  .process__design-content-container img,
+  .process__development-content-container img {
+    max-width: 4rem;
+  }
+
+  .process__details-discovery-steps,
+  .process__details-design-steps,
+  .process__details-development-steps {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  .custom-element {
+    padding-left: 2rem;
+    padding-top: 2.15rem;
+    background-size: 5.5rem 5.5rem;
+  }
+
+  .custom-element ul {
+    line-height: 1.75rem;
+  }
+}
