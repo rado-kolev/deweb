@@ -10,7 +10,10 @@
 
 .header__hero {
   height: 43.25rem;
-  background: url('../index/imgs/gradient.png') no-repeat right top;
+  background-image: url('../index/imgs/gradient.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 100%;
 }
 
 .header__hero-info {
@@ -72,10 +75,12 @@
 }
 
 .about-us__values {
-  width: 100vw;
+  width: 100%;
+  max-width: 81.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 0 1.5rem;
   margin-bottom: 6rem;
 }
@@ -86,10 +91,10 @@
 
 .about-us__values-container {
   width: 100%;
-  max-width: 81.25rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .custom-element {
@@ -103,6 +108,9 @@
   background-size: 9.5rem 9.5rem;
 }
 
+.custom-element:nth-child(even) {
+  justify-self: end;
+}
 
 .element-header {
   display: flex;
@@ -152,6 +160,8 @@
   max-width: 30rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .team__content-box img {
@@ -163,7 +173,7 @@
 }
 
 .team__content-box h4 {
-  width: 100%;
+  /* width: 100%; */
   color: var(--clr-white);
   padding-top: 2rem;
   padding-bottom: 0.5rem;
@@ -182,4 +192,55 @@
 
 .footer__info-box {
   margin-top: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .team__content-box {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .custom-element {
+    background-size: 9rem 9rem;
+  }
+
+  .team__content-box img {
+    height: 30.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .team__content-box img {
+    height: 22.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-us__values-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  .custom-element {
+    padding-left: 2rem;
+    padding-top: 2.15rem;
+    background-size: 5.5rem 5.5rem;
+  }
+
+  .about-us__team-container {
+    flex-direction: column;
+  }
+
+  .team__content-box {
+    width: 100%;
+  }
+
+  .team__content-box:first-child {
+    margin-bottom: 4rem;
+  }
+
+  .team__content-box img {
+    height: 30.5rem;
+  }
 }
