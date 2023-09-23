@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./shared/shared.css">
+  <link rel="stylesheet" href="./contact/contact.css">
+  <script src="https://kit.fontawesome.com/395b4471a7.js" crossorigin="anonymous"></script>
+  <title>DeWeb Tech | Contact Us</title>
+</head>
+
+<body>
+  <header class="header">
+    <!-- *** Create Header *** -->
+    <script type='module'>
+      // Import the createHeader function from shared.js
+      import { createHeader } from './shared/shared.js';
+
+      // Call the createHeader function to generate the header
+      const header = createHeader();
+
+      // Customise the header content for this page
+      const h1 = header.querySelector('.header__hero-info h1');
+      h1.textContent = 'Want to start a project with us?';
+
+      const p = header.querySelector('.header__hero-info p');
+      p.innerHTML = `Fill in our Contact Form and we will contact you to schedule a call.`;
+    </script>
+  </header>
+
+  <main>
+    <div class="contact__container">
+      <div class="contact__form-container">
+        <div class="contact__form">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="full-name">What is your name?</label>
+              <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="email">What is your email address?</label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="company">What is your company name?</label>
+              <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+            </div>
+          
+            <div class="form-group">
+              <label>How can we help you?</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" name="help[]" value="Web Design"> Web Design
+                </label>
+                <label>
+                  <input type="checkbox" name="help[]" value="Web Development"> Web Development
+                </label>
+                <label>
+                  <input type="checkbox" name="help[]" value="Branding"> Branding
+                </label>
+                <label>
+                  <input type="checkbox" name="help[]" value="SEO Optimisation"> SEO Optimisation
+                </label>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="message">Tell us a little about the project</label>
+              <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+            </div>
+          
+            <button class='btn' type="submit">Send Message</button>
+          </form>
+        </div>
+  
+        <div class="contact__info">
+          <div id="mail">
+            <h3>Email Us</h3>
+            <p>dewebtechlimited@gmail.com</p>
+          </div>
+          <div id="address">
+            <h3>Address</h3>
+            <p>Gedempte Zuiderdiep, 9711HN <br>
+            Groningen, The Netherlands</p>
+          </div>
+          <img src="./contact/imgs/contact-us.png" alt="Contact Us">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <script type="module">
+      import { createFooter } from './shared/shared.js';
+      const footerElement = document.querySelector('.footer');
+      footerElement.appendChild(createFooter());
+    </script>
+  </footer>
+
+  <script type="module" src="./shared/shared.js"></script>
+  <script type='module' src="./contact/contact.js"></script>
+
+</body>
+
+</html>
