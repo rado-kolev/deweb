@@ -12,7 +12,7 @@ A website prototype, that was created following the available Figma design (not 
 
 ## Screenshots
 
-![Website screenshots](./demo/)
+![Website screenshots](./demo/screenshot-deweb.png)
 
 <br/>
 
